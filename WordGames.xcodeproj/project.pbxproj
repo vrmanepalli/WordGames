@@ -15,6 +15,8 @@
 		4C2CB4292194BB4D005CB98B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB4282194BB4D005CB98B /* main.m */; };
 		4C2CB4332194BB4D005CB98B /* WordGamesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB4322194BB4D005CB98B /* WordGamesTests.m */; };
 		4C2CB43E2194BB4D005CB98B /* WordGamesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB43D2194BB4D005CB98B /* WordGamesUITests.m */; };
+		4C2CB4562194C162005CB98B /* GamesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB4552194C162005CB98B /* GamesCollectionViewCell.m */; };
+		4C2CB4592194C2C0005CB98B /* GamesCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB4582194C2C0005CB98B /* GamesCollectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		4C2CB4392194BB4D005CB98B /* WordGamesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordGamesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2CB43D2194BB4D005CB98B /* WordGamesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordGamesUITests.m; sourceTree = "<group>"; };
 		4C2CB43F2194BB4D005CB98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C2CB4542194C162005CB98B /* GamesCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamesCollectionViewCell.h; sourceTree = "<group>"; };
+		4C2CB4552194C162005CB98B /* GamesCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamesCollectionViewCell.m; sourceTree = "<group>"; };
+		4C2CB4572194C2C0005CB98B /* GamesCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamesCollectionView.h; sourceTree = "<group>"; };
+		4C2CB4582194C2C0005CB98B /* GamesCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamesCollectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +109,9 @@
 			children = (
 				4C2CB4192194BB4B005CB98B /* AppDelegate.h */,
 				4C2CB41A2194BB4B005CB98B /* AppDelegate.m */,
-				4C2CB41C2194BB4B005CB98B /* ViewController.h */,
-				4C2CB41D2194BB4B005CB98B /* ViewController.m */,
-				4C2CB41F2194BB4B005CB98B /* Main.storyboard */,
+				4C2CB44D2194C0A7005CB98B /* Controller */,
+				4C2CB44C2194C0A1005CB98B /* Model */,
+				4C2CB44B2194C091005CB98B /* View */,
 				4C2CB4222194BB4D005CB98B /* Assets.xcassets */,
 				4C2CB4242194BB4D005CB98B /* LaunchScreen.storyboard */,
 				4C2CB4272194BB4D005CB98B /* Info.plist */,
@@ -130,6 +136,34 @@
 				4C2CB43F2194BB4D005CB98B /* Info.plist */,
 			);
 			path = WordGamesUITests;
+			sourceTree = "<group>";
+		};
+		4C2CB44B2194C091005CB98B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CB4542194C162005CB98B /* GamesCollectionViewCell.h */,
+				4C2CB4552194C162005CB98B /* GamesCollectionViewCell.m */,
+				4C2CB4572194C2C0005CB98B /* GamesCollectionView.h */,
+				4C2CB4582194C2C0005CB98B /* GamesCollectionView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C2CB44C2194C0A1005CB98B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CB41F2194BB4B005CB98B /* Main.storyboard */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C2CB44D2194C0A7005CB98B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CB41C2194BB4B005CB98B /* ViewController.h */,
+				4C2CB41D2194BB4B005CB98B /* ViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2CB4562194C162005CB98B /* GamesCollectionViewCell.m in Sources */,
 				4C2CB41E2194BB4B005CB98B /* ViewController.m in Sources */,
 				4C2CB4292194BB4D005CB98B /* main.m in Sources */,
 				4C2CB41B2194BB4B005CB98B /* AppDelegate.m in Sources */,
+				4C2CB4592194C2C0005CB98B /* GamesCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
