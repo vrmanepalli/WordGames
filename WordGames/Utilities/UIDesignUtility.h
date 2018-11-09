@@ -1,18 +1,19 @@
 //
-//  GamesCollectionView.h
+//  UIDesignUtility.h
 //  WordGames
 //
 //  Created by Vasudeva Manepalli on 11/8/18.
 //  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GamesCollectionView : UICollectionView
+@interface UIDesignUtility : NSObject
 
-@property (nonatomic, strong) NSArray *games;
++ (void) roundTheCorners:(UIView *) view;
 
 @end
 

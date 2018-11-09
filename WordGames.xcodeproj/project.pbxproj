@@ -17,6 +17,8 @@
 		4C2CB43E2194BB4D005CB98B /* WordGamesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB43D2194BB4D005CB98B /* WordGamesUITests.m */; };
 		4C2CB4562194C162005CB98B /* GamesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB4552194C162005CB98B /* GamesCollectionViewCell.m */; };
 		4C2CB4592194C2C0005CB98B /* GamesCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB4582194C2C0005CB98B /* GamesCollectionView.m */; };
+		4C2CB45D2194FE2A005CB98B /* UIDesignUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB45C2194FE2A005CB98B /* UIDesignUtility.m */; };
+		4C2CB4602194FFBA005CB98B /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CB45F2194FFBA005CB98B /* test.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		4C2CB4552194C162005CB98B /* GamesCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamesCollectionViewCell.m; sourceTree = "<group>"; };
 		4C2CB4572194C2C0005CB98B /* GamesCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamesCollectionView.h; sourceTree = "<group>"; };
 		4C2CB4582194C2C0005CB98B /* GamesCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamesCollectionView.m; sourceTree = "<group>"; };
+		4C2CB45B2194FE2A005CB98B /* UIDesignUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIDesignUtility.h; sourceTree = "<group>"; };
+		4C2CB45C2194FE2A005CB98B /* UIDesignUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIDesignUtility.m; sourceTree = "<group>"; };
+		4C2CB45F2194FFBA005CB98B /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,8 @@
 				4C2CB44D2194C0A7005CB98B /* Controller */,
 				4C2CB44C2194C0A1005CB98B /* Model */,
 				4C2CB44B2194C091005CB98B /* View */,
+				4C2CB45A2194FE06005CB98B /* Utilities */,
+				4C2CB45E2194FF5F005CB98B /* SupportingFiles */,
 				4C2CB4222194BB4D005CB98B /* Assets.xcassets */,
 				4C2CB4242194BB4D005CB98B /* LaunchScreen.storyboard */,
 				4C2CB4272194BB4D005CB98B /* Info.plist */,
@@ -141,6 +148,7 @@
 		4C2CB44B2194C091005CB98B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4C2CB41F2194BB4B005CB98B /* Main.storyboard */,
 				4C2CB4542194C162005CB98B /* GamesCollectionViewCell.h */,
 				4C2CB4552194C162005CB98B /* GamesCollectionViewCell.m */,
 				4C2CB4572194C2C0005CB98B /* GamesCollectionView.h */,
@@ -152,7 +160,6 @@
 		4C2CB44C2194C0A1005CB98B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4C2CB41F2194BB4B005CB98B /* Main.storyboard */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +171,23 @@
 				4C2CB41D2194BB4B005CB98B /* ViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4C2CB45A2194FE06005CB98B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CB45B2194FE2A005CB98B /* UIDesignUtility.h */,
+				4C2CB45C2194FE2A005CB98B /* UIDesignUtility.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4C2CB45E2194FF5F005CB98B /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CB45F2194FFBA005CB98B /* test.jpg */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C2CB4262194BB4D005CB98B /* LaunchScreen.storyboard in Resources */,
+				4C2CB4602194FFBA005CB98B /* test.jpg in Resources */,
 				4C2CB4232194BB4D005CB98B /* Assets.xcassets in Resources */,
 				4C2CB4212194BB4B005CB98B /* Main.storyboard in Resources */,
 			);
@@ -298,6 +323,7 @@
 			files = (
 				4C2CB4562194C162005CB98B /* GamesCollectionViewCell.m in Sources */,
 				4C2CB41E2194BB4B005CB98B /* ViewController.m in Sources */,
+				4C2CB45D2194FE2A005CB98B /* UIDesignUtility.m in Sources */,
 				4C2CB4292194BB4D005CB98B /* main.m in Sources */,
 				4C2CB41B2194BB4B005CB98B /* AppDelegate.m in Sources */,
 				4C2CB4592194C2C0005CB98B /* GamesCollectionView.m in Sources */,

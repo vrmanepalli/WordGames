@@ -21,6 +21,16 @@ static NSString *CELL_IDENTIFIER = @"GameCell";
 }
 */
 
+- (NSArray *) games {
+ 
+    if(!_games) {
+        _games = [[NSArray alloc] init];
+    }
+    
+    return _games;
+    
+}
+
 - (NSInteger)numberOfSections {
  
     return 1;
@@ -29,13 +39,15 @@ static NSString *CELL_IDENTIFIER = @"GameCell";
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section {
     
-    return 4;
+    return 2;
     
 }
 
 - (UICollectionViewCell *)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
    GamesCollectionViewCell *cell = [self dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
+    
+    [cell setImageForEachGame:[UIImage imageNamed:@"test.jpg"] andTitleForEachGame:@"Test"];
     
     return cell;
 }
