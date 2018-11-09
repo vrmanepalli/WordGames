@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GamesCollectionView.h"
 
-@interface ViewController : UIViewController<UICollectionViewDataSource>
+@interface ViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet GamesCollectionView *gamesCollectionView;
 

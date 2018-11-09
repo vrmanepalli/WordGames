@@ -1,0 +1,15 @@
+//
+//  PrefixHeader.pch
+//  WordGames
+//
+//  Created by Vasudeva Manepalli on 11/9/18.
+//  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define GAME_ICON @"GameIcon"
+#define GAME_TITLE @"GameTitle"
+
+#endif /* PrefixHeader_pch */

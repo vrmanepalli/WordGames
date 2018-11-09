@@ -19,6 +19,12 @@
 		4C2CB4592194C2C0005CB98B /* GamesCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB4582194C2C0005CB98B /* GamesCollectionView.m */; };
 		4C2CB45D2194FE2A005CB98B /* UIDesignUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB45C2194FE2A005CB98B /* UIDesignUtility.m */; };
 		4C2CB4602194FFBA005CB98B /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CB45F2194FFBA005CB98B /* test.jpg */; };
+		4C2CB46621960DB0005CB98B /* CatchPhrase.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CB46521960DB0005CB98B /* CatchPhrase.png */; };
+		4C2CB46821960E1E005CB98B /* Password.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CB46721960E1D005CB98B /* Password.png */; };
+		4C2CB46B21960F1B005CB98B /* Charade.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CB46921960F1B005CB98B /* Charade.png */; };
+		4C2CB46C21960F1B005CB98B /* Pictionary.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CB46A21960F1B005CB98B /* Pictionary.png */; };
+		4C2CB47421961543005CB98B /* GamesDetailsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB47321961543005CB98B /* GamesDetailsObject.m */; };
+		4C2CB47821964440005CB98B /* SuperGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB47721964440005CB98B /* SuperGameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +68,15 @@
 		4C2CB45B2194FE2A005CB98B /* UIDesignUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIDesignUtility.h; sourceTree = "<group>"; };
 		4C2CB45C2194FE2A005CB98B /* UIDesignUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIDesignUtility.m; sourceTree = "<group>"; };
 		4C2CB45F2194FFBA005CB98B /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		4C2CB46521960DB0005CB98B /* CatchPhrase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CatchPhrase.png; sourceTree = "<group>"; };
+		4C2CB46721960E1D005CB98B /* Password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Password.png; sourceTree = "<group>"; };
+		4C2CB46921960F1B005CB98B /* Charade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Charade.png; sourceTree = "<group>"; };
+		4C2CB46A21960F1B005CB98B /* Pictionary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pictionary.png; sourceTree = "<group>"; };
+		4C2CB47121960FB6005CB98B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		4C2CB47221961543005CB98B /* GamesDetailsObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamesDetailsObject.h; sourceTree = "<group>"; };
+		4C2CB47321961543005CB98B /* GamesDetailsObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamesDetailsObject.m; sourceTree = "<group>"; };
+		4C2CB47621964440005CB98B /* SuperGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperGameViewController.h; sourceTree = "<group>"; };
+		4C2CB47721964440005CB98B /* SuperGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +127,7 @@
 		4C2CB4182194BB4B005CB98B /* WordGames */ = {
 			isa = PBXGroup;
 			children = (
+				4C2CB47021960F9E005CB98B /* PCHFiles */,
 				4C2CB4192194BB4B005CB98B /* AppDelegate.h */,
 				4C2CB41A2194BB4B005CB98B /* AppDelegate.m */,
 				4C2CB44D2194C0A7005CB98B /* Controller */,
@@ -160,6 +176,7 @@
 		4C2CB44C2194C0A1005CB98B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4C2CB47521963810005CB98B /* Factory */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +186,8 @@
 			children = (
 				4C2CB41C2194BB4B005CB98B /* ViewController.h */,
 				4C2CB41D2194BB4B005CB98B /* ViewController.m */,
+				4C2CB47621964440005CB98B /* SuperGameViewController.h */,
+				4C2CB47721964440005CB98B /* SuperGameViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,9 +204,38 @@
 		4C2CB45E2194FF5F005CB98B /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				4C2CB46421960DA2005CB98B /* Icons */,
 				4C2CB45F2194FFBA005CB98B /* test.jpg */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4C2CB46421960DA2005CB98B /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CB46521960DB0005CB98B /* CatchPhrase.png */,
+				4C2CB46921960F1B005CB98B /* Charade.png */,
+				4C2CB46721960E1D005CB98B /* Password.png */,
+				4C2CB46A21960F1B005CB98B /* Pictionary.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		4C2CB47021960F9E005CB98B /* PCHFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CB47121960FB6005CB98B /* PrefixHeader.pch */,
+			);
+			path = PCHFiles;
+			sourceTree = "<group>";
+		};
+		4C2CB47521963810005CB98B /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CB47221961543005CB98B /* GamesDetailsObject.h */,
+				4C2CB47321961543005CB98B /* GamesDetailsObject.m */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,7 +343,11 @@
 			files = (
 				4C2CB4262194BB4D005CB98B /* LaunchScreen.storyboard in Resources */,
 				4C2CB4602194FFBA005CB98B /* test.jpg in Resources */,
+				4C2CB46821960E1E005CB98B /* Password.png in Resources */,
+				4C2CB46C21960F1B005CB98B /* Pictionary.png in Resources */,
 				4C2CB4232194BB4D005CB98B /* Assets.xcassets in Resources */,
+				4C2CB46621960DB0005CB98B /* CatchPhrase.png in Resources */,
+				4C2CB46B21960F1B005CB98B /* Charade.png in Resources */,
 				4C2CB4212194BB4B005CB98B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +376,8 @@
 				4C2CB4562194C162005CB98B /* GamesCollectionViewCell.m in Sources */,
 				4C2CB41E2194BB4B005CB98B /* ViewController.m in Sources */,
 				4C2CB45D2194FE2A005CB98B /* UIDesignUtility.m in Sources */,
+				4C2CB47421961543005CB98B /* GamesDetailsObject.m in Sources */,
+				4C2CB47821964440005CB98B /* SuperGameViewController.m in Sources */,
 				4C2CB4292194BB4D005CB98B /* main.m in Sources */,
 				4C2CB41B2194BB4B005CB98B /* AppDelegate.m in Sources */,
 				4C2CB4592194C2C0005CB98B /* GamesCollectionView.m in Sources */,
@@ -499,6 +553,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L52544R8JN;
+				GCC_PREFIX_HEADER = /Users/vmanep/Documents/ObjectiveC/WordGames/WordGames/PCHFiles/PrefixHeader.pch;
 				INFOPLIST_FILE = WordGames/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -516,6 +571,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L52544R8JN;
+				GCC_PREFIX_HEADER = /Users/vmanep/Documents/ObjectiveC/WordGames/WordGames/PCHFiles/PrefixHeader.pch;
 				INFOPLIST_FILE = WordGames/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

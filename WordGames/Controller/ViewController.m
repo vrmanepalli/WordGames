@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "SuperGameViewController.h"
+#import "GamesCollectionViewCell.h"
 
 @interface ViewController ()
 
@@ -33,6 +35,21 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     return [self.gamesCollectionView numberOfItemsInSection:section];
+    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self.gamesCollectionView selectItemAtIndexPath:indexPath animated:true scrollPosition:UICollectionViewScrollPositionTop];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([sender isKindOfClass:[GamesCollectionViewCell class]]) {
+        SuperGameViewController *superGMC = [[segue.destinationViewController childViewControllers] objectAtIndex:0];
+        [superGMC setTitle:@"Catch Phrase"];
+    }
     
 }
 

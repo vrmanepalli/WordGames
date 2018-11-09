@@ -11,19 +11,13 @@
 
 @implementation GamesCollectionViewCell
 
-- (instancetype)init {
-    
-    [UIDesignUtility roundTheCorners:self.imageForEachGame];
-    [UIDesignUtility roundTheCorners:self.textForEachGame];
-    return self;
-    
-}
-
 - (void)setImageForEachGame:(UIImage *)imageForEachGame andTitleForEachGame:(NSString *) title {
     
     self.imageForEachGame.image = imageForEachGame;
     self.textForEachGame.text = title;
     
+//    [UIDesignUtility roundTheCorners:self.imageForEachGame];
+//    [UIDesignUtility roundTheCorners:self.textForEachGame];
 }
 
 @end

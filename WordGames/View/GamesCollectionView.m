@@ -8,6 +8,8 @@
 
 #import "GamesCollectionView.h"
 #import "GamesCollectionViewCell.h"
+#import "UIDesignUtility.h"
+#import "GamesDetailsObject.h"
 
 static NSString *CELL_IDENTIFIER = @"GameCell";
 
@@ -24,7 +26,7 @@ static NSString *CELL_IDENTIFIER = @"GameCell";
 - (NSArray *) games {
  
     if(!_games) {
-        _games = [[NSArray alloc] init];
+        _games = [[GamesDetailsObject alloc] initializeWithGames];
     }
     
     return _games;
@@ -39,17 +41,24 @@ static NSString *CELL_IDENTIFIER = @"GameCell";
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section {
     
-    return 2;
+    return [self.games count];
     
 }
 
 - (UICollectionViewCell *)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
    GamesCollectionViewCell *cell = [self dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
-    
-    [cell setImageForEachGame:[UIImage imageNamed:@"test.jpg"] andTitleForEachGame:@"Test"];
+    NSDictionary *gameItem = [self.games objectAtIndex:indexPath.row];
+    UIImage *image = [UIImage imageNamed:[gameItem objectForKey:GAME_ICON]];
+    NSString *title = [gameItem objectForKey:GAME_TITLE];
+    [cell setImageForEachGame: image andTitleForEachGame:title];
+    [UIDesignUtility roundTheCorners:cell];
     
     return cell;
+}
+
+-  (void)selectItemAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UICollectionViewScrollPosition)scrollPosition {
+    //Perform required setup.
 }
 
 @end
