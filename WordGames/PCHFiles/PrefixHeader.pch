@@ -12,4 +12,8 @@
 #define GAME_ICON @"GameIcon"
 #define GAME_TITLE @"GameTitle"
 
+#define VIEW_TITLE @"ViewTitle"
+#define GAME_URL @"GameURL"
+#define JSON_RESPONSE_KEY @"JSONResponseKey"
+
 #endif /* PrefixHeader_pch */

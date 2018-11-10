@@ -25,6 +25,7 @@
 		4C2CB46C21960F1B005CB98B /* Pictionary.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CB46A21960F1B005CB98B /* Pictionary.png */; };
 		4C2CB47421961543005CB98B /* GamesDetailsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB47321961543005CB98B /* GamesDetailsObject.m */; };
 		4C2CB47821964440005CB98B /* SuperGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB47721964440005CB98B /* SuperGameViewController.m */; };
+		4C2CB47B21977324005CB98B /* ScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB47A21977324005CB98B /* ScoreBoardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		4C2CB47321961543005CB98B /* GamesDetailsObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamesDetailsObject.m; sourceTree = "<group>"; };
 		4C2CB47621964440005CB98B /* SuperGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperGameViewController.h; sourceTree = "<group>"; };
 		4C2CB47721964440005CB98B /* SuperGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperGameViewController.m; sourceTree = "<group>"; };
+		4C2CB47921977324005CB98B /* ScoreBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreBoardView.h; sourceTree = "<group>"; };
+		4C2CB47A21977324005CB98B /* ScoreBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreBoardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,12 +130,12 @@
 		4C2CB4182194BB4B005CB98B /* WordGames */ = {
 			isa = PBXGroup;
 			children = (
-				4C2CB47021960F9E005CB98B /* PCHFiles */,
 				4C2CB4192194BB4B005CB98B /* AppDelegate.h */,
 				4C2CB41A2194BB4B005CB98B /* AppDelegate.m */,
 				4C2CB44D2194C0A7005CB98B /* Controller */,
 				4C2CB44C2194C0A1005CB98B /* Model */,
 				4C2CB44B2194C091005CB98B /* View */,
+				4C2CB47021960F9E005CB98B /* PCHFiles */,
 				4C2CB45A2194FE06005CB98B /* Utilities */,
 				4C2CB45E2194FF5F005CB98B /* SupportingFiles */,
 				4C2CB4222194BB4D005CB98B /* Assets.xcassets */,
@@ -169,6 +172,8 @@
 				4C2CB4552194C162005CB98B /* GamesCollectionViewCell.m */,
 				4C2CB4572194C2C0005CB98B /* GamesCollectionView.h */,
 				4C2CB4582194C2C0005CB98B /* GamesCollectionView.m */,
+				4C2CB47921977324005CB98B /* ScoreBoardView.h */,
+				4C2CB47A21977324005CB98B /* ScoreBoardView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				4C2CB4562194C162005CB98B /* GamesCollectionViewCell.m in Sources */,
 				4C2CB41E2194BB4B005CB98B /* ViewController.m in Sources */,
 				4C2CB45D2194FE2A005CB98B /* UIDesignUtility.m in Sources */,
+				4C2CB47B21977324005CB98B /* ScoreBoardView.m in Sources */,
 				4C2CB47421961543005CB98B /* GamesDetailsObject.m in Sources */,
 				4C2CB47821964440005CB98B /* SuperGameViewController.m in Sources */,
 				4C2CB4292194BB4D005CB98B /* main.m in Sources */,

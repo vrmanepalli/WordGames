@@ -14,7 +14,7 @@
     
     NSDictionary *catchPhrase = @{
                                   GAME_ICON: @"CatchPhrase.png",
-                                  GAME_TITLE: @"Catch Phrase"
+                                  GAME_TITLE: @"Catch Phrase",
                                   };
     
     NSDictionary *password = @{
