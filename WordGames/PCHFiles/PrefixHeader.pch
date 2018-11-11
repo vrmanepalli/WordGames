@@ -12,7 +12,9 @@
 #define GAME_ICON @"GameIcon"
 #define GAME_TITLE @"GameTitle"
 
-#define VIEW_TITLE @"ViewTitle"
+#define SCORE_TEAM_1_KEY @"ScoreTeam1Key"
+#define SCORE_TEAM_2_KEY @"ScoreTeam2Key"
+
 #define GAME_URL @"GameURL"
 #define JSON_RESPONSE_KEY @"JSONResponseKey"
 

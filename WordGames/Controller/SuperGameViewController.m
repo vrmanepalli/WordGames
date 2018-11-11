@@ -7,6 +7,8 @@
 //
 
 #import "SuperGameViewController.h"
+#import "UIDesignUtility.h"
+#import "GamesDetailsObject.h"
 
 @interface SuperGameViewController ()
 
@@ -14,13 +16,37 @@
 
 @implementation SuperGameViewController
 
+#pragma mark - Callback Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self initializeGame];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [self.scoreBoardView loadScoresFromUserDefaults];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [self.scoreBoardView saveScoresToUserDefaults];
+    
+}
+
+#pragma mark - IBAction Methods
 - (IBAction)btnStopGameIsPressed:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+
+#pragma mark - Instance Methods
+- (void) initializeGame {
+    
+    if(self.gameDetails) {
+        [self setTitle:[self.gameDetails objectForKey:GAME_TITLE]];
+        [self.scoreBoardView initializeWithGameKey1:[self.gameDetails objectForKey:SCORE_TEAM_1_KEY] andGameKey2:[self.gameDetails objectForKey:SCORE_TEAM_2_KEY]];
+    }
+    
 }
 
 @end

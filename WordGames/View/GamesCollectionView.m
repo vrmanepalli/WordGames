@@ -28,15 +28,12 @@ static NSString *CELL_IDENTIFIER = @"GameCell";
     if(!_games) {
         _games = [[GamesDetailsObject alloc] initializeWithGames];
     }
-    
     return _games;
     
 }
 
 - (NSInteger)numberOfSections {
- 
     return 1;
-    
 }
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section {
@@ -58,7 +55,11 @@ static NSString *CELL_IDENTIFIER = @"GameCell";
 }
 
 -  (void)selectItemAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UICollectionViewScrollPosition)scrollPosition {
-    //Perform required setup.
+    self.selectedIndex = (int) indexPath.row;
+}
+
+- (NSDictionary *)getSelectedGameObject {
+    return [self.games objectAtIndex:self.selectedIndex];
 }
 
 @end

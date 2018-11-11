@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScoreBoardView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SuperGameViewController : UIViewController
+
+@property (nonatomic, strong) NSDictionary *gameDetails;
+
+@property (weak, nonatomic) IBOutlet ScoreBoardView *scoreBoardView;
+
 
 - (IBAction)btnStopGameIsPressed:(id)sender;
 

@@ -14,6 +14,8 @@
 
 @end
 
+int selectedIndex;
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -48,7 +50,7 @@
     
     if([sender isKindOfClass:[GamesCollectionViewCell class]]) {
         SuperGameViewController *superGMC = [[segue.destinationViewController childViewControllers] objectAtIndex:0];
-        [superGMC setTitle:@"Catch Phrase"];
+        superGMC.gameDetails = [self.gamesCollectionView getSelectedGameObject];
     }
     
 }

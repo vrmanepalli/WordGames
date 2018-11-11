@@ -12,7 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GamesCollectionView : UICollectionView
 
+@property (nonatomic) int selectedIndex;
+
 @property (nonatomic, strong) NSArray *games;
+
+- (NSDictionary *) getSelectedGameObject;
 
 @end
 
