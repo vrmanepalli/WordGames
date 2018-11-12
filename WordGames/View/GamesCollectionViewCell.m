@@ -14,7 +14,7 @@
 - (void)setImageForEachGame:(UIImage *)imageForEachGame andTitleForEachGame:(NSString *) title {
     
     self.imageForEachGame.image = imageForEachGame;
-    self.textForEachGame.text = title;
+    self.lblForEachGame.text = title;
     
 //    [UIDesignUtility roundTheCorners:self.imageForEachGame];
 //    [UIDesignUtility roundTheCorners:self.textForEachGame];

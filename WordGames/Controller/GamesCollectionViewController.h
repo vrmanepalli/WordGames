@@ -1,8 +1,8 @@
 //
-//  GamesCollectionView.h
+//  GamesCollectionViewController.h
 //  WordGames
 //
-//  Created by Vasudeva Manepalli on 11/8/18.
+//  Created by Vasudeva Manepalli on 11/12/18.
 //  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
 //
 
@@ -10,13 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GamesCollectionView : UICollectionView
-
-@property (nonatomic) int selectedIndex;
+@interface GamesCollectionViewController : UICollectionViewController
 
 @property (nonatomic, strong) NSArray *games;
-
-- (NSDictionary *) getSelectedGameObject;
 
 @end
 

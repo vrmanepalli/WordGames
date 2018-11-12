@@ -17,9 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet ScoreBoardView *scoreBoardView;
 
-
-- (IBAction)btnStopGameIsPressed:(id)sender;
-
 @end
 
 NS_ASSUME_NONNULL_END

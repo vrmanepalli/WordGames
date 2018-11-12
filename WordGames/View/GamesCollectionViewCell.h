@@ -13,7 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GamesCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageForEachGame;
-@property (weak, nonatomic) IBOutlet UITextView *textForEachGame;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblForEachGame;
+
 
 - (void)setImageForEachGame:(UIImage *)imageForEachGame andTitleForEachGame:(NSString *) title;
 

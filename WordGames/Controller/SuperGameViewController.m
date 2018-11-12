@@ -34,16 +34,12 @@
     
 }
 
-#pragma mark - IBAction Methods
-- (IBAction)btnStopGameIsPressed:(id)sender {
-    [self dismissViewControllerAnimated:true completion:nil];
-}
-
 #pragma mark - Instance Methods
 - (void) initializeGame {
     
     if(self.gameDetails) {
         [self setTitle:[self.gameDetails objectForKey:GAME_TITLE]];
+        
         [self.scoreBoardView initializeWithGameKey1:[self.gameDetails objectForKey:SCORE_TEAM_1_KEY] andGameKey2:[self.gameDetails objectForKey:SCORE_TEAM_2_KEY]];
     }
     
