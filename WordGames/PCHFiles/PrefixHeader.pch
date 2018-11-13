@@ -15,6 +15,9 @@
 #define SCORE_TEAM_1_KEY @"ScoreTeam1Key"
 #define SCORE_TEAM_2_KEY @"ScoreTeam2Key"
 
+#define SOUND_SECTION_KEY @"SoundSectionKey"
+#define SOUND_ROW_KEY @"SoundRowKey"
+
 #define GAME_URL @"GameURL"
 #define JSON_RESPONSE_KEY @"JSONResponseKey"
 

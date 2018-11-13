@@ -16,28 +16,36 @@
                                   GAME_ICON: @"CatchPhrase.png",
                                   GAME_TITLE: @"Catch Phrase",
                                   SCORE_TEAM_1_KEY: @"Catch_Phrase_Team1_Score",
-                                  SCORE_TEAM_2_KEY: @"Catch_Phrase_Team2_Score"
+                                  SCORE_TEAM_2_KEY: @"Catch_Phrase_Team2_Score",
+                                  SOUND_SECTION_KEY: @"Catch_Phrase_Sound_Section_Key",
+                                  SOUND_ROW_KEY: @"Catch_Phrase_Sound_Row_Key"
                                   };
     
     NSDictionary *password = @{
                                GAME_ICON: @"Password.png",
                                GAME_TITLE: @"Password",
                                SCORE_TEAM_1_KEY: @"Password_Team1_Score",
-                               SCORE_TEAM_2_KEY: @"Password_Team2_Score"
+                               SCORE_TEAM_2_KEY: @"Password_Team2_Score",
+                               SOUND_SECTION_KEY: @"Password_Sound_Section_Key",
+                               SOUND_ROW_KEY: @"Password_Sound_Row_Key"
                                };
     
     NSDictionary *pictionary = @{
                                  GAME_ICON: @"Pictionary.png",
                                  GAME_TITLE: @"Pictionary",
                                  SCORE_TEAM_1_KEY: @"Pictionary_Team1_Score",
-                                 SCORE_TEAM_2_KEY: @"Pictionary_Team2_Score"
+                                 SCORE_TEAM_2_KEY: @"Pictionary_Team2_Score",
+                                 SOUND_SECTION_KEY: @"Pictionary_Sound_Section_Key",
+                                 SOUND_ROW_KEY: @"Pictionary_Sound_Row_Key"
                                  };
     
     NSDictionary *charade = @{
                               GAME_ICON: @"Charade.png",
                               GAME_TITLE: @"Charade",
                               SCORE_TEAM_1_KEY: @"Charade_Team1_Score",
-                              SCORE_TEAM_2_KEY: @"Charade_Team2_Score"
+                              SCORE_TEAM_2_KEY: @"Charade_Team2_Score",
+                              SOUND_SECTION_KEY: @"Charade_Sound_Section_Key",
+                              SOUND_ROW_KEY: @"Charade_Sound_Row_Key"
                               };
     
     NSArray *games = [NSArray arrayWithObjects:catchPhrase, password, pictionary, charade, nil];

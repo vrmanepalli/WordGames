@@ -25,6 +25,15 @@
 		4C2CB47421961543005CB98B /* GamesDetailsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB47321961543005CB98B /* GamesDetailsObject.m */; };
 		4C2CB47821964440005CB98B /* SuperGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB47721964440005CB98B /* SuperGameViewController.m */; };
 		4C2CB47B21977324005CB98B /* ScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CB47A21977324005CB98B /* ScoreBoardView.m */; };
+		4C8AF8C5219A28F7001CAB39 /* SoundSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8AF8C4219A28F7001CAB39 /* SoundSelectionTableViewController.m */; };
+		4C8AF8D3219A31A9001CAB39 /* Supporting Files in Resources */ = {isa = PBXBuildFile; fileRef = 4C8AF8D2219A31A9001CAB39 /* Supporting Files */; };
+		4C8AF937219A329D001CAB39 /* beeps in Resources */ = {isa = PBXBuildFile; fileRef = 4C8AF934219A329D001CAB39 /* beeps */; };
+		4C8AF938219A329D001CAB39 /* slides in Resources */ = {isa = PBXBuildFile; fileRef = 4C8AF935219A329D001CAB39 /* slides */; };
+		4C8AF939219A329D001CAB39 /* taps in Resources */ = {isa = PBXBuildFile; fileRef = 4C8AF936219A329D001CAB39 /* taps */; };
+		4C8AF93E219A390C001CAB39 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8AF93D219A390B001CAB39 /* settings.png */; };
+		4C8AF944219A3B06001CAB39 /* volume.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8AF943219A3B06001CAB39 /* volume.png */; };
+		4C8AF946219A3B85001CAB39 /* sound.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8AF945219A3B84001CAB39 /* sound.png */; };
+		4C983BF6219B479900E30C69 /* SoundPlayUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C983BF5219B479900E30C69 /* SoundPlayUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +86,17 @@
 		4C2CB47721964440005CB98B /* SuperGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperGameViewController.m; sourceTree = "<group>"; };
 		4C2CB47921977324005CB98B /* ScoreBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreBoardView.h; sourceTree = "<group>"; };
 		4C2CB47A21977324005CB98B /* ScoreBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreBoardView.m; sourceTree = "<group>"; };
+		4C8AF8C3219A28F7001CAB39 /* SoundSelectionTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundSelectionTableViewController.h; sourceTree = "<group>"; };
+		4C8AF8C4219A28F7001CAB39 /* SoundSelectionTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundSelectionTableViewController.m; sourceTree = "<group>"; };
+		4C8AF8D2219A31A9001CAB39 /* Supporting Files */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Supporting Files"; path = "WordGames/Supporting Files"; sourceTree = "<group>"; };
+		4C8AF934219A329D001CAB39 /* beeps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = beeps; sourceTree = "<group>"; };
+		4C8AF935219A329D001CAB39 /* slides */ = {isa = PBXFileReference; lastKnownFileType = folder; path = slides; sourceTree = "<group>"; };
+		4C8AF936219A329D001CAB39 /* taps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = taps; sourceTree = "<group>"; };
+		4C8AF93D219A390B001CAB39 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		4C8AF943219A3B06001CAB39 /* volume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volume.png; sourceTree = "<group>"; };
+		4C8AF945219A3B84001CAB39 /* sound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sound.png; sourceTree = "<group>"; };
+		4C983BF4219B479900E30C69 /* SoundPlayUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundPlayUtility.h; sourceTree = "<group>"; };
+		4C983BF5219B479900E30C69 /* SoundPlayUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundPlayUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +127,7 @@
 		4C2CB40D2194BB4B005CB98B = {
 			isa = PBXGroup;
 			children = (
+				4C8AF8D2219A31A9001CAB39 /* Supporting Files */,
 				4C2CB4182194BB4B005CB98B /* WordGames */,
 				4C2CB4312194BB4D005CB98B /* WordGamesTests */,
 				4C2CB43C2194BB4D005CB98B /* WordGamesUITests */,
@@ -134,7 +155,7 @@
 				4C2CB44B2194C091005CB98B /* View */,
 				4C2CB47021960F9E005CB98B /* PCHFiles */,
 				4C2CB45A2194FE06005CB98B /* Utilities */,
-				4C2CB45E2194FF5F005CB98B /* SupportingFiles */,
+				4C2CB45E2194FF5F005CB98B /* Supporting Files */,
 				4C2CB4222194BB4D005CB98B /* Assets.xcassets */,
 				4C2CB4242194BB4D005CB98B /* LaunchScreen.storyboard */,
 				4C2CB4272194BB4D005CB98B /* Info.plist */,
@@ -188,6 +209,8 @@
 				4C2B78CC2199EF1C00B4F253 /* GamesCollectionViewController.m */,
 				4C2CB47621964440005CB98B /* SuperGameViewController.h */,
 				4C2CB47721964440005CB98B /* SuperGameViewController.m */,
+				4C8AF8C3219A28F7001CAB39 /* SoundSelectionTableViewController.h */,
+				4C8AF8C4219A28F7001CAB39 /* SoundSelectionTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,22 +220,30 @@
 			children = (
 				4C2CB45B2194FE2A005CB98B /* UIDesignUtility.h */,
 				4C2CB45C2194FE2A005CB98B /* UIDesignUtility.m */,
+				4C983BF4219B479900E30C69 /* SoundPlayUtility.h */,
+				4C983BF5219B479900E30C69 /* SoundPlayUtility.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		4C2CB45E2194FF5F005CB98B /* SupportingFiles */ = {
+		4C2CB45E2194FF5F005CB98B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C8AF934219A329D001CAB39 /* beeps */,
+				4C8AF935219A329D001CAB39 /* slides */,
+				4C8AF936219A329D001CAB39 /* taps */,
 				4C2CB46421960DA2005CB98B /* Icons */,
 				4C2CB45F2194FFBA005CB98B /* test.jpg */,
 			);
-			path = SupportingFiles;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4C2CB46421960DA2005CB98B /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				4C8AF945219A3B84001CAB39 /* sound.png */,
+				4C8AF943219A3B06001CAB39 /* volume.png */,
+				4C8AF93D219A390B001CAB39 /* settings.png */,
 				4C2CB46521960DB0005CB98B /* CatchPhrase.png */,
 				4C2CB46921960F1B005CB98B /* Charade.png */,
 				4C2CB46721960E1D005CB98B /* Password.png */,
@@ -341,7 +372,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8AF939219A329D001CAB39 /* taps in Resources */,
+				4C8AF938219A329D001CAB39 /* slides in Resources */,
+				4C8AF946219A3B85001CAB39 /* sound.png in Resources */,
+				4C8AF8D3219A31A9001CAB39 /* Supporting Files in Resources */,
 				4C2CB4262194BB4D005CB98B /* LaunchScreen.storyboard in Resources */,
+				4C8AF93E219A390C001CAB39 /* settings.png in Resources */,
+				4C8AF937219A329D001CAB39 /* beeps in Resources */,
 				4C2CB4602194FFBA005CB98B /* test.jpg in Resources */,
 				4C2CB46821960E1E005CB98B /* Password.png in Resources */,
 				4C2CB46C21960F1B005CB98B /* Pictionary.png in Resources */,
@@ -349,6 +386,7 @@
 				4C2CB46621960DB0005CB98B /* CatchPhrase.png in Resources */,
 				4C2CB46B21960F1B005CB98B /* Charade.png in Resources */,
 				4C2CB4212194BB4B005CB98B /* Main.storyboard in Resources */,
+				4C8AF944219A3B06001CAB39 /* volume.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +412,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C2B78CD2199EF1C00B4F253 /* GamesCollectionViewController.m in Sources */,
+				4C8AF8C5219A28F7001CAB39 /* SoundSelectionTableViewController.m in Sources */,
+				4C983BF6219B479900E30C69 /* SoundPlayUtility.m in Sources */,
 				4C2CB4562194C162005CB98B /* GamesCollectionViewCell.m in Sources */,
 				4C2CB45D2194FE2A005CB98B /* UIDesignUtility.m in Sources */,
 				4C2CB47B21977324005CB98B /* ScoreBoardView.m in Sources */,

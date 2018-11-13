@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="kEA-nR-DGR" customClass="SuperGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qX3-WM-QFP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgv-ZL-Z1P" customClass="ScoreBoardView">
-                                <rect key="frame" x="16" y="326" width="288" height="61"/>
+                                <rect key="frame" x="16" y="375" width="288" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="999" constant="61" id="3Nk-r7-sFI"/>
                                     <constraint firstAttribute="width" secondItem="kgv-ZL-Z1P" secondAttribute="height" multiplier="288:61" id="Aia-cK-gpf"/>
@@ -29,7 +29,7 @@
                                 </connections>
                             </containerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Next Clue" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f4d-Kh-ffz">
-                                <rect key="frame" x="40" y="161.5" width="240" height="128"/>
+                                <rect key="frame" x="40" y="186" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="f4d-Kh-ffz" secondAttribute="height" multiplier="15:8" id="DQa-XN-Smv"/>
@@ -53,6 +53,12 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="refresh" id="lIk-kH-Mo9"/>
+                        <barButtonItem width="18" style="plain" systemItem="fixedSpace" id="JBt-59-ppc"/>
+                        <barButtonItem title="Settings" image="sound.png" id="15W-8z-9mi">
+                            <connections>
+                                <segue destination="fnW-cZ-GOX" kind="presentation" id="CR5-ng-3Ka"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Specific Game" id="wDh-bZ-CPe"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -69,7 +75,7 @@
             <objects>
                 <collectionViewController title="Home" id="3xm-f7-til" customClass="GamesCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3Pl-yw-3Q0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="layoutMargins" id="H2l-je-lRM">
@@ -79,7 +85,7 @@
                             <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="playback" misplaced="YES" restorationIdentifier="GameCell" reuseIdentifier="GameCell" id="oSu-H9-mgN" customClass="GamesCollectionViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="playback" restorationIdentifier="GameCell" reuseIdentifier="GameCell" id="oSu-H9-mgN" customClass="GamesCollectionViewCell">
                                 <rect key="frame" x="87" y="28" width="146" height="166"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -89,14 +95,14 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CatchPhrase.png" translatesAutoresizingMaskIntoConstraints="NO" id="sG3-zD-fm5">
                                             <rect key="frame" x="3" y="3" width="140" height="128"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="sG3-zD-fm5" secondAttribute="height" multiplier="35:32" id="uyx-zF-0yw"/>
+                                                <constraint firstAttribute="width" secondItem="sG3-zD-fm5" secondAttribute="height" multiplier="35:32" id="g1A-Dc-pB9"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpA-mU-sHX">
-                                            <rect key="frame" x="23.5" y="93.5" width="99" height="23.5"/>
+                                            <rect key="frame" x="3" y="133" width="140" height="33"/>
                                             <color key="backgroundColor" red="1" green="0.76791957619999995" blue="0.33887929249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="vpA-mU-sHX" secondAttribute="height" multiplier="140:33" id="wqx-87-DKu"/>
+                                                <constraint firstAttribute="width" secondItem="vpA-mU-sHX" secondAttribute="height" multiplier="140:33" id="rN8-mE-BC3"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -106,13 +112,14 @@
                                 </view>
                                 <color key="backgroundColor" red="0.3929163967" green="0.66666668650000005" blue="0.47119459969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="sG3-zD-fm5" firstAttribute="centerX" secondItem="oSu-H9-mgN" secondAttribute="centerX" id="6zW-4Q-VCw"/>
-                                    <constraint firstAttribute="trailing" secondItem="sG3-zD-fm5" secondAttribute="trailing" constant="3" id="B7t-iC-J70"/>
-                                    <constraint firstItem="vpA-mU-sHX" firstAttribute="width" secondItem="oSu-H9-mgN" secondAttribute="height" multiplier="70:83" id="Bru-cT-rYH"/>
-                                    <constraint firstItem="sG3-zD-fm5" firstAttribute="top" secondItem="oSu-H9-mgN" secondAttribute="top" constant="3" id="Daf-at-05V"/>
-                                    <constraint firstItem="sG3-zD-fm5" firstAttribute="leading" secondItem="oSu-H9-mgN" secondAttribute="leading" constant="3" id="f9G-fD-J2d"/>
-                                    <constraint firstItem="vpA-mU-sHX" firstAttribute="centerX" secondItem="oSu-H9-mgN" secondAttribute="centerX" id="xeL-Px-c3c"/>
-                                    <constraint firstAttribute="bottom" secondItem="vpA-mU-sHX" secondAttribute="bottom" id="yOd-xR-sGG"/>
+                                    <constraint firstAttribute="trailing" secondItem="sG3-zD-fm5" secondAttribute="trailing" constant="3" id="3dc-lS-KZ3"/>
+                                    <constraint firstItem="sG3-zD-fm5" firstAttribute="centerX" secondItem="oSu-H9-mgN" secondAttribute="centerX" id="4S5-Yb-XsU"/>
+                                    <constraint firstItem="sG3-zD-fm5" firstAttribute="leading" secondItem="oSu-H9-mgN" secondAttribute="leading" constant="3" id="8eg-gL-FbB"/>
+                                    <constraint firstItem="vpA-mU-sHX" firstAttribute="top" secondItem="sG3-zD-fm5" secondAttribute="bottom" constant="2" id="Dn5-fQ-jVe"/>
+                                    <constraint firstItem="vpA-mU-sHX" firstAttribute="centerX" secondItem="oSu-H9-mgN" secondAttribute="centerX" id="Eqc-fQ-JwI"/>
+                                    <constraint firstAttribute="trailing" secondItem="vpA-mU-sHX" secondAttribute="trailing" constant="3" id="HWY-Qd-SLb"/>
+                                    <constraint firstItem="vpA-mU-sHX" firstAttribute="leading" secondItem="oSu-H9-mgN" secondAttribute="leading" constant="3" id="m44-5c-Eht"/>
+                                    <constraint firstItem="sG3-zD-fm5" firstAttribute="top" secondItem="oSu-H9-mgN" secondAttribute="top" constant="3" id="sRy-D0-P5h"/>
                                 </constraints>
                                 <size key="customSize" width="146" height="166"/>
                                 <connections>
@@ -131,7 +138,57 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfB-cd-vQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1903" y="455"/>
+            <point key="canvasLocation" x="1901.25" y="455"/>
+        </scene>
+        <!--Sound Selection Table View Controller-->
+        <scene sceneID="Ytf-lI-P1k">
+            <objects>
+                <tableViewController id="fnW-cZ-GOX" customClass="SoundSelectionTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lb5-FF-R21">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="DCJ-QQ-2zd">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Select Sound" id="hRT-TP-TZs">
+                                    <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="n5J-PJ-RAJ">
+                                        <connections>
+                                            <action selector="btnIsSaveIsPressed:" destination="fnW-cZ-GOX" id="cH9-jr-vSl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="sound-cell" textLabel="pCk-pB-gDg" style="IBUITableViewCellStyleDefault" id="ZXd-hc-khe">
+                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZXd-hc-khe" id="a7X-wO-SC2">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pCk-pB-gDg">
+                                            <rect key="frame" x="16" y="0.0" width="264" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fnW-cZ-GOX" id="ame-Um-Ikk"/>
+                            <outlet property="delegate" destination="fnW-cZ-GOX" id="fre-YN-jlV"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B1D-8D-9kG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901" y="1294"/>
         </scene>
         <!--ScoreBoardView-->
         <scene sceneID="6aO-Ye-GVD">
@@ -189,20 +246,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gd5-CM-U9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="1003"/>
+            <point key="canvasLocation" x="2749" y="1024"/>
         </scene>
         <!--Word Games Navigator-->
         <scene sceneID="bjz-q3-gaI">
             <objects>
-                <navigationController title="Word Games Navigator" automaticallyAdjustsScrollViewInsets="NO" id="Z79-gP-KLq" sceneMemberID="viewController">
+                <navigationController title="Word Games Navigator" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Z79-gP-KLq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EE4-zR-9re">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gV7-6V-1cI">
+                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="3xm-f7-til" kind="relationship" relationship="rootViewController" id="SEo-mN-qDm"/>
                     </connections>
@@ -214,5 +274,6 @@
     </scenes>
     <resources>
         <image name="CatchPhrase.png" width="256" height="256"/>
+        <image name="sound.png" width="32" height="32"/>
     </resources>
 </document>
