@@ -1,7 +1,11 @@
 //
 //  SoundSelectionTableViewController.m
 //  WordGames
-//
+// *******************
+//  This View Controller presents a table view with all available sounds in the app.
+//  It allows the user to select and store a sound as default.
+//  It play the selected sound once to let user know what they like.
+// *******************
 //  Created by Vasudeva Manepalli on 11/12/18.
 //  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
 //
@@ -26,9 +30,24 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
 @implementation SoundSelectionTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    [self readIndexes];
     
+    [super viewDidLoad];
+    [self readDefaultOrPreferredSoundIndexes];
+    [self loadAllSoundArrays];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kTOLSoundCellIdentifier];
+}
+
+//Loads the default or user preferred sound from User Defaults.
+- (void) readDefaultOrPreferredSoundIndexes {
+    
+    self.indexRow = [[[NSUserDefaults standardUserDefaults] objectForKey:self.soundRowKey] intValue];
+    self.indexSection = [[[NSUserDefaults standardUserDefaults] objectForKey:self.soundSectionKey] intValue];
+    
+}
+
+//Finds and loads arrays with file paths of all sounds.
+- (void) loadAllSoundArrays {
     NSMutableArray *slides = [NSMutableArray array];
     NSMutableArray *beeps = [NSMutableArray array];
     NSMutableArray *taps = [NSMutableArray array];
@@ -63,20 +82,12 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
     
     self.tableViewData = @[slides, beeps, taps];
     self.soundPlayers = @[slideSessions, beepSessions, tapSessions];
-    
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kTOLSoundCellIdentifier];
-}
-
-- (void) readIndexes {
-    
-    self.indexRow = [[[NSUserDefaults standardUserDefaults] objectForKey:self.soundRowKey] intValue];
-    self.indexSection = [[[NSUserDefaults standardUserDefaults] objectForKey:self.soundSectionKey] intValue];
-    
 }
 
 #pragma mark - Table view data source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTOLSoundCellIdentifier forIndexPath:indexPath];
     if(self.indexSection == (int) indexPath.section && self.indexRow == (int) indexPath.row) {
         cell.backgroundColor = [UIColor grayColor];
@@ -84,6 +95,7 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
         cell.backgroundColor = [UIColor whiteColor];
     }
     return cell;
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -95,6 +107,7 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
     self.indexSection = (int) indexPath.section;
     [tableView reloadData];
 //    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -143,10 +156,12 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
     
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:self.indexRow] forKey:self.soundRowKey];
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:self.indexSection] forKey:self.soundSectionKey];
+    [[NSUserDefaults standardUserDefaults] setObject:self.self.tableViewData[self.indexSection][self.indexRow] forKey:self.soundFilePathKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.delegate useSoundFile:self.tableViewData[self.indexSection][self.indexRow]];
     [self dismissViewControllerAnimated:true completion:nil];
     
 }
+
 @end

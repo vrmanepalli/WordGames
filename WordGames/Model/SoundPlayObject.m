@@ -1,30 +1,55 @@
 //
-//  SoundPlayUtility.m
+//  SoundPlayObject.m
 //  WordGames
+//
+//
+//  **********************
+//
+//  Its main usability is to play a sound for a minute with varying delays.
+//  - Methods
+//      init -> Initializes the variables that allows it to play sound for a minute with varying delays.
+//      prepareAndPlayAudioPlayerWithFile -> Creates AVAudioPlayer with the desired Audio file and calls playSoundMethod.
+//      playSound -> It dispatches a delayed call to itself as per its dispatchInterval and plays the sound once.
+//                   It changes the dispatchInterval based on its value reaching milestones.
+//                   Once the minute completes it will stop dispatching calls to itself, resets the settings and makes roundCompleted call to delegate.
+//
+//  **********************
 //
 //  Created by Vasudeva Manepalli on 11/13/18.
 //  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
 //
 
-#import "SoundPlayUtility.h"
+#import "SoundPlayObject.h"
 
-@implementation SoundPlayUtility
+@implementation SoundPlayObject
 
-- (instancetype)init {
+- (instancetype)initWithSoundFilePathKey: (NSString *) soundFilePathKey {
     
     if(!self) {
-        self = [[SoundPlayUtility alloc] init];
+        self = [[SoundPlayObject alloc] init];
     }
     self.isRunning = true;
     self.repeatFor = 135;
     self.dispatchInterval = 1.0;
+    self.audioFilePath = [[NSUserDefaults standardUserDefaults] objectForKey:soundFilePathKey];
+    if(!self.audioFilePath) {
+        self.audioFilePath = [[NSBundle mainBundle] pathForResource:@"beep-hightone" ofType:@"aif" inDirectory:@"beeps"];
+        [self saveSoundFilePathToUserDefaultsWithKey:soundFilePathKey];
+    }
     return self;
     
 }
 
-- (void)prepareAndPlayAudioPlayerWithFile:(NSString *)audioFilePath {
+- (void)saveSoundFilePathToUserDefaultsWithKey: (NSString *) soundFilePathKey {
     
-    NSURL *soundURL = [NSURL fileURLWithPath:audioFilePath];
+    [[NSUserDefaults standardUserDefaults] setObject:self.audioFilePath forKey:soundFilePathKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
+- (void)prepareAndPlayAudioPlayerWithFile {
+    
+    NSURL *soundURL = [NSURL fileURLWithPath:self.audioFilePath];
     NSError *error = nil;
     AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
     [audioPlayer prepareToPlay];
@@ -58,6 +83,9 @@
                 }
                 [weakSelf playSound: audioPlayer];
             } else {
+                weakSelf.isRunning = true;
+                weakSelf.repeatFor = 135;
+                weakSelf.dispatchInterval = 1.0;
                 [weakSelf.delegate roundCompleted];
             }
         }

@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) NSString *soundRowKey;
 @property (nonatomic, weak) NSString *soundSectionKey;
+@property (nonatomic, weak) NSString *soundFilePathKey;
 
 @property (nonatomic, strong) NSArray *tableViewData;
 

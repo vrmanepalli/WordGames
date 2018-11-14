@@ -1,22 +1,25 @@
 //
-//  ScoreBoardView.m
+//  ScoreBoardViewController.m
 //  WordGames
 //
-//  Created by Vasudeva Manepalli on 11/10/18.
+//  Created by Vasudeva Manepalli on 11/14/18.
 //  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
 //
 
-#import "ScoreBoardView.h"
+#import "ScoreBoardViewController.h"
 #import "UIDesignUtility.h"
+#import "SuperGameViewController.h"
 
-@implementation ScoreBoardView
+@interface ScoreBoardViewController ()
 
-- (void)initializeWithGameKey1:(NSString *) gameKey1 andGameKey2: (NSString *) gameKey2 {
-    
-    self.key1 = gameKey1;
-    self.key2 = gameKey2;
-    [UIDesignUtility roundTheCorners:self];
-    
+@end
+
+@implementation ScoreBoardViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [UIDesignUtility roundTheCorners:self.view];
+    [self loadScoresFromUserDefaults];
 }
 
 - (void) loadScoresFromUserDefaults {
@@ -51,7 +54,7 @@
 
 - (void)displayScores {
     
-    self.lblTeam1Score.text = [NSString stringWithFormat:@"Team 1: %d", self.team1Score];
+    self.lblTeam1Score.text = [NSString stringWithFormat:@"Team 1: %d", 1];
     self.lblTeam2Score.text = [NSString stringWithFormat:@"Team 2: %d", self.team2Score];
     
 }

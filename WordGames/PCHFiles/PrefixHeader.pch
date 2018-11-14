@@ -17,6 +17,7 @@
 
 #define SOUND_SECTION_KEY @"SoundSectionKey"
 #define SOUND_ROW_KEY @"SoundRowKey"
+#define SOUND_FILE_PATH_KEY @"SoundFilePathKey"
 
 #define GAME_URL @"GameURL"
 #define JSON_RESPONSE_KEY @"JSONResponseKey"

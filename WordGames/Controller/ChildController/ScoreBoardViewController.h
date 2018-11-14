@@ -1,8 +1,8 @@
 //
-//  ScoreBoardView.h
+//  ScoreBoardViewController.h
 //  WordGames
 //
-//  Created by Vasudeva Manepalli on 11/10/18.
+//  Created by Vasudeva Manepalli on 11/14/18.
 //  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ScoreBoardView : UIView
+@interface ScoreBoardViewController : UIViewController
 
 #pragma mark - Instance Variables
 @property (nonatomic, strong) NSString *key1;
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *lblTeam2Score;
 
 #pragma mark - Methods
-- (void)initializeWithGameKey1:(NSString *) gameKey1 andGameKey2: (NSString *) gameKey2;
+
 - (void) loadScoresFromUserDefaults;
 - (void) saveScoresToUserDefaults;
 - (void)incrementScoreForTeam1;

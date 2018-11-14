@@ -9,6 +9,7 @@
 #import "SuperGameViewController.h"
 #import "UIDesignUtility.h"
 #import "GamesDetailsObject.h"
+#import "ScoreBoardViewController.h"
 
 @interface SuperGameViewController ()
 
@@ -22,34 +23,20 @@
     [self initializeGame];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    
-    [self.scoreBoardView loadScoresFromUserDefaults];
-    
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    
-    [self.scoreBoardView saveScoresToUserDefaults];
-    
-}
-
 #pragma mark - Instance Methods
 - (void) initializeGame {
     
     if(self.gameDetails) {
         [self setTitle:[self.gameDetails objectForKey:GAME_TITLE]];
-        
-        [self.scoreBoardView initializeWithGameKey1:[self.gameDetails objectForKey:SCORE_TEAM_1_KEY] andGameKey2:[self.gameDetails objectForKey:SCORE_TEAM_2_KEY]];
-        
-        self.soundPlayObject = [[SoundPlayUtility alloc] init];
-        
-        self.soundPlayObject.delegate = self;
-        
-        self.soundFile = [[NSBundle mainBundle] pathForResource:@"beep-hightone" ofType:@"aif" inDirectory:@"beeps"];
-        
-        [self.soundPlayObject prepareAndPlayAudioPlayerWithFile:self.soundFile];
+        [self initializeSound];
     }
+    
+}
+
+- (void) initializeSound {
+    
+    self.soundPlayObject = [[SoundPlayObject alloc] initWithSoundFilePathKey:[self.gameDetails objectForKey:SOUND_FILE_PATH_KEY]];
+    [self.soundPlayObject prepareAndPlayAudioPlayerWithFile];
     
 }
 
@@ -63,6 +50,12 @@
         soundSelectionVC.delegate = self;
         soundSelectionVC.soundRowKey = [self.gameDetails objectForKey:SOUND_ROW_KEY];
         soundSelectionVC.soundSectionKey = [self.gameDetails objectForKey:SOUND_SECTION_KEY];
+        soundSelectionVC.soundFilePathKey = [self.gameDetails objectForKey:SOUND_FILE_PATH_KEY];
+        
+    } else if([segue.identifier isEqualToString:@"SegueToScoreBoardViewController"]) {
+        ScoreBoardViewController *scoreBoard = segue.destinationViewController;
+        scoreBoard.key1 = [self.gameDetails objectForKey:SCORE_TEAM_1_KEY];
+        scoreBoard.key2 = [self.gameDetails objectForKey:SCORE_TEAM_2_KEY];
     }
     
 }
@@ -70,7 +63,18 @@
 #pragma mark - SoundSelectionDelegate Method
 
 - (void)useSoundFile:(nonnull NSString *)filePath {
+    
     self.soundFile = filePath;
+    [self saveSoundFilePathToUserDefaults];
+    [self initializeSound];
+    
+}
+
+- (void)saveSoundFilePathToUserDefaults {
+    
+    [[NSUserDefaults standardUserDefaults] setObject:self.soundFile forKey:[self.gameDetails objectForKey:SOUND_FILE_PATH_KEY]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
 }
 
 - (void)roundCompleted {
