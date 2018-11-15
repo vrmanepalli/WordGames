@@ -245,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gd5-CM-U9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2749" y="1024"/>
+            <point key="canvasLocation" x="2738" y="1270"/>
         </scene>
         <!--Word Games Navigator-->
         <scene sceneID="bjz-q3-gaI">

@@ -1,11 +1,25 @@
 //
 //  SoundSelectionTableViewController.m
 //  WordGames
-// *******************
-//  This View Controller presents a table view with all available sounds in the app.
+/****************************
+//  This View Controller presents a table view with all sounds that are available in the app.
 //  It allows the user to select and store a sound as default.
 //  It play the selected sound once to let user know what they like.
-// *******************
+ METHODS:
+    #Helper Methods
+ - (void) readDefaultOrPreferredSoundIndexes -> It requires to read the default or previous selection from UserDefaults; section and row number.
+        - (void) loadAllSoundArrays -> This requires to read all sound files paths with '.aif' extension from the app, organize them and add to specific array.
+        - (NSString *)soundNameFromPath:(NSString *)path -> This requires to generate a captalized name based on the filename and use it in each entry of the table
+    #TableView data source Methods
+        - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+        - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+        - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+        - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+        - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+        - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+    #IBActions Methods
+        - (IBAction)btnIsSaveIsPressed:(id)sender -> This requires to save the sound selection which gets triggered when user clicks on the Save button.
+****************************/
 //  Created by Vasudeva Manepalli on 11/12/18.
 //  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
 //
@@ -38,6 +52,7 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kTOLSoundCellIdentifier];
 }
 
+#pragma mark - Helper Methods
 //Loads the default or user preferred sound from User Defaults.
 - (void) readDefaultOrPreferredSoundIndexes {
     
@@ -84,7 +99,15 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
     self.soundPlayers = @[slideSessions, beepSessions, tapSessions];
 }
 
-#pragma mark - Table view data source
+- (NSString *)soundNameFromPath:(NSString *)path
+{
+    NSString *fileName = [[path lastPathComponent] stringByDeletingPathExtension];
+    NSString *soundName = [[fileName componentsSeparatedByString:@"-"] lastObject];
+    
+    return [soundName capitalizedString];
+}
+
+#pragma mark - TableView data source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -140,18 +163,7 @@ NSString * const kTOLSoundCellIdentifier = @"sound-cell";
     cell.textLabel.text = [self soundNameFromPath:self.tableViewData[indexPath.section][indexPath.row]];
 }
 
-
-#pragma mark - Helpers
-
-- (NSString *)soundNameFromPath:(NSString *)path
-{
-    NSString *fileName = [[path lastPathComponent] stringByDeletingPathExtension];
-    NSString *soundName = [[fileName componentsSeparatedByString:@"-"] lastObject];
-    
-    return [soundName capitalizedString];
-}
-
-#pragma mark - IBActions
+#pragma mark - IBActions Methods
 - (IBAction)btnIsSaveIsPressed:(id)sender {
     
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:self.indexRow] forKey:self.soundRowKey];

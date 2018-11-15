@@ -1,7 +1,19 @@
 //
 //  SuperGameViewController.m
 //  WordGames
-//
+/**************************
+// This controller presents one of the games based on the GamesDetailsObject provided: Catch Phrase, Password, Pictionary, Charade.
+// METHODS
+//  -> UICollectionViewDataSource Callback methods:
+//      - (void) initializeGame -> Initializes the SoundPlayObject which is required for tracking each round for 1 minute.
+//      - (void) initializeSound -> Helper method which plays sound for one minute.
+//      cellForItemAtIndexPath
+//  -> - SoundSelectionDelegate Callback methods:
+//      - (void)useSoundFile:(nonnull NSString *)filePath -> This callback provides the selection of sound from SoundSelectionTableViewController which will be used by reinitializing SoundPlayObject.
+//      - (void)roundCompleted -> After a minute and game completion this callback will be triggered by SoundPlayObject.
+//  -> Segue Methods
+//      prepareForSegue
+**************************/
 //  Created by Vasudeva Manepalli on 11/9/18.
 //  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
 //
@@ -40,6 +52,26 @@
     
 }
 
+#pragma mark - SoundSelectionDelegate Method
+- (void)useSoundFile:(nonnull NSString *)filePath {
+    
+    self.soundFile = filePath;
+    [self saveSoundFilePathToUserDefaults];
+    [self initializeSound];
+    
+}
+
+- (void)saveSoundFilePathToUserDefaults {
+    
+    [[NSUserDefaults standardUserDefaults] setObject:self.soundFile forKey:[self.gameDetails objectForKey:SOUND_FILE_PATH_KEY]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
+- (void)roundCompleted {
+    NSLog(@"Round completed.");
+}
+
 #pragma mark - Segue Methods
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -58,27 +90,6 @@
         scoreBoard.key2 = [self.gameDetails objectForKey:SCORE_TEAM_2_KEY];
     }
     
-}
-
-#pragma mark - SoundSelectionDelegate Method
-
-- (void)useSoundFile:(nonnull NSString *)filePath {
-    
-    self.soundFile = filePath;
-    [self saveSoundFilePathToUserDefaults];
-    [self initializeSound];
-    
-}
-
-- (void)saveSoundFilePathToUserDefaults {
-    
-    [[NSUserDefaults standardUserDefaults] setObject:self.soundFile forKey:[self.gameDetails objectForKey:SOUND_FILE_PATH_KEY]];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-}
-
-- (void)roundCompleted {
-    NSLog(@"Round completed.");
 }
 
 @end

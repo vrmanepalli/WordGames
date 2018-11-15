@@ -2,6 +2,16 @@
 //  ScoreBoardViewController.m
 //  WordGames
 //
+/****************************
+ This View Controller presents the score of each team on SuperGameViewController.
+ METHODS:
+ #Helper Methods
+ - (void) loadScoresFromUserDefaults -> This helps to load the previous scores of the game for Team1 and Team2 from UserDefaults.
+- (void) saveScoresToUserDefaults -> This helps to save the scores whenever the the view disappers or closed.
+ - (void)incrementScoreForTeam1 -> After each round and Team1's win this method will increment and display Team1's score.
+ - (void)incrementScoreForTeam2 -> After each round and Team2's win this method will increment and display Team2's score.
+ - (void)displayScores -> This will help to display the scores of Team1 and Team2 during initial load, and after completion of each round.
+ ****************************/
 //  Created by Vasudeva Manepalli on 11/14/18.
 //  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
 //
@@ -22,6 +32,7 @@
     [self loadScoresFromUserDefaults];
 }
 
+#pragma mark - Helper Methods
 - (void) loadScoresFromUserDefaults {
     
     self.team1Score = [[[NSUserDefaults standardUserDefaults] objectForKey:self.key1] intValue];

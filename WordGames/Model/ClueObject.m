@@ -39,7 +39,11 @@
         NSData *data = [NSData dataWithContentsOfURL:url];
         NSError *error;
         NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-        [self.delegate downloadingClueCompleted:json];
+        if(error) {
+            
+        } else {
+            [self.delegate downloadingClueCompleted:json];
+        }
     }];
     
 }

@@ -1,7 +1,19 @@
 //
 //  GamesCollectionViewController.m
 //  WordGames
-//
+/**************************
+// This controller presents a grid of 4 games: Catch Phrase, Password, Pictionary, Charade.
+// METHODS
+//  -> UICollectionViewDataSource Callback methods:
+//      numberOfSectionsInCollectionView
+//      numberOfItemsInSection
+//      cellForItemAtIndexPath
+//  -> UICollectionViewDelegate Callback methods:
+//      shouldHighlightItemAtIndexPath
+//      shouldSelectItemAtIndexPath
+//  -> Segue Methods
+//      prepareForSegue
+**************************/
 //  Created by Vasudeva Manepalli on 11/12/18.
 //  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
 //
@@ -67,6 +79,7 @@ static NSString * const reuseIdentifier = @"GameCell";
     return YES;
 }
 
+#pragma mark - Segue Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.destinationViewController isKindOfClass:[SuperGameViewController class]]) {
         SuperGameViewController *superVC = segue.destinationViewController;

@@ -1,7 +1,15 @@
 //
 //  ClueViewController.m
 //  WordGames
-//
+/****************************
+ This View Controller presents each clue, activity indicator and a button; which triggers and loads next clue on every click.
+ METHODS:
+ #Helper Methods
+    - (void) loadNextClue -> This helps to trigger the download of a random word on a new queue.
+    - (void)downloadingClueCompleted:(NSMutableArray *) responseArray -> This will update the Label on Main Queue when the download and parse of the random word is completed.
+ #IBActions Methods
+    - (IBAction)btnNextClueIsPressed:(id)sender -> This requires to download, parse and load the next in the label.
+ ****************************/
 //  Created by Vasudeva Manepalli on 11/14/18.
 //  Copyright © 2018 Vasudeva Manepalli. All rights reserved.
 //
@@ -25,6 +33,7 @@
     [UIDesignUtility roundTheCorners:self.btnNextClue];
 }
 
+#pragma mark - Helper Methods
 - (void) loadNextClue {
     [self.activityIndicator startAnimating];
     [self.clueObj downloadNextClue];
@@ -42,6 +51,7 @@
     }];
 }
 
+#pragma mark - IBAction Methods
 - (IBAction)btnNextClueIsPressed:(id)sender {
     [self loadNextClue];
 }
